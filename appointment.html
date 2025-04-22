@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Home button -->
+        <button class="home-btn" onclick="window.location.href='hms.html'">Home</button>
+
+        <div class="dashboard">
+            <h2>Welcome, Patient</h2>
+
+            <!-- Patient Info -->
+            <div class="patient-info">
+               
+            </div>
+
+            <!-- Appointment Booking Section -->
+            <div class="appointment-section">
+                <h3>Book an Appointment</h3>
+
+                <!-- Doctor Selection -->
+                <label for="doctor">Choose a Doctor:</label>
+                <select id="doctor" name="doctor" onchange="updateTimeSlots()">
+                    <option value="doctor1">Dr. Sarah Williams</option>
+                    <option value="doctor2">Dr. Michael Smith</option>
+                    <option value="doctor3">Dr. Emily Clark</option>
+                    <option value="doctor4">Dr. David Brown</option>
+                </select>
+                <br><br>
+
+                <!-- Time Slot Selection -->
+                <label for="time-slot">Choose a Time Slot:</label>
+                <select id="time-slot" name="time-slot">
+                    <!-- Time slots will be populated dynamically -->
+                </select>
+                <br><br>
+
+                <!-- Submit Button -->
+                <button onclick="bookAppointment()">Book Appointment</button>
+            </div>
+        </div>
+
+        <!-- Modal for Confirmation -->
+        <div class="modal" id="confirmationModal">
+            <div class="modal-content">
+                <h4>Appointment Confirmed!</h4>
+                <p id="modalDetails"></p>
+                <button onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to update time slots based on selected doctor
+        function updateTimeSlots() {
+            const doctor = document.getElementById('doctor').value;
+            const timeSlotSelect = document.getElementById('time-slot');
+            timeSlotSelect.innerHTML = ''; // Clear current options
+
+            let timeSlots = [];
+            if (doctor === 'doctor1') {
+                timeSlots = ['9:00 AM', '11:00 AM', '1:00 PM'];
+            } else if (doctor === 'doctor2') {
+                timeSlots = ['10:00 AM', '12:00 PM', '2:00 PM'];
+            } else if (doctor === 'doctor3') {
+                timeSlots = ['8:00 AM', '12:00 PM', '4:00 PM'];
+            } else if (doctor === 'doctor4') {
+                timeSlots = ['9:30 AM', '1:30 PM', '3:30 PM'];
+            }
+
+            // Populate the time slots dropdown
+            timeSlots.forEach(function(slot) {
+                const option = document.createElement('option');
+                option.value = slot;
+                option.textContent = slot;
+                timeSlotSelect.appendChild(option);
+            });
+        }
+
+        // Function to handle appointment booking
+        function bookAppointment() {
+            const doctor = document.getElementById('doctor').value;
+            const timeSlot = document.getElementById('time-slot').value;
+
+            // Input validation
+            if (!doctor || !timeSlot) {
+                alert('Please select both a doctor and a time slot.');
+                return;
+            }
+
+            // Show confirmation modal with booking details
+            const modalDetails = document.getElementById('modalDetails');
+            modalDetails.textContent = `You have successfully booked an appointment with ${doctor} at ${timeSlot}.`;
+
+            const modal = document.getElementById('confirmationModal');
+            modal.style.display = 'block';
+        }
+
+        // Close the confirmation modal
+        function closeModal() {
+            const modal = document.getElementById('confirmationModal');
+            modal.style.display = 'none';
+        }
+
+        // Initialize the time slots on page load
+        window.onload = function() {
+            updateTimeSlots(); // Set default time slots when the page loads
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Font Awesome icons -->
+    <style>
+        /* Body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f8f9;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+
+        /* Heading styling */
+        h1 {
+            color: #007bff;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        /* Container for the cards */
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        /* Card styling */
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h3 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1em;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-secondary {
+            background-color: #4CAF50;
+        }
+
+        .btn-secondary:hover {
+            background-color: #45a049;
+        }
+
+        /* Icon styling */
+        .icon {
+            color: #007bff;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1><i class="fas fa-hospital-alt icon"></i>Welcome to the Hospital Management System</h1>
+    <p>Choose your role to either log in :</p>
+    
+    <div class="container">
+        <!-- Admin Card -->
+        <div class="card">
+            <h3><i class="fas fa-user-shield icon"></i>Admin</h3>
+            <a href="admin_login.html" class="btn"><i class="fas fa-sign-in-alt icon"></i>Login as Admin</a><br>
+           
+        </div>
+
+        <!-- Doctor Card -->
+        <div class="card">
+            <h3><i class="fas fa-user-md icon"></i>Doctor</h3>
+            <a href="doctor_login.php" class="btn"><i class="fas fa-sign-in-alt icon"></i>Login as Doctor</a><br>
+        </div>
+
+        <!-- Patient Card -->
+        <div class="card">
+            <h3><i class="fas fa-procedures icon"></i>Patient</h3>
+            <a href="patient_login.html" class="btn"><i class="fas fa-sign-in-alt icon"></i>Login as Patient</a><br>
+           
+        </div>
+    </div>
+</body>
+</html>

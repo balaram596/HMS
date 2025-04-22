@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Font Awesome icons -->
+    <style>
+        /* Body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f8f9;
+            color: #333;
+            padding: 50px;
+        }
+
+        /* Heading styling */
+        h2 {
+            text-align: center;
+            color: #007bff;
+            font-size: 2em;
+        }
+
+        /* Form container styling */
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Label styling */
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        /* Input field styling */
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        /* Button styling */
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Link styling */
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Icon styling */
+        .icon {
+            color: #007bff;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h2><i class="fas fa-user-shield icon"></i>Admin Login</h2>
+    <div class="form-container">
+        <form action="admin_login.php" method="POST">
+            <label for="username"><i class="fas fa-user icon"></i>Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password"><i class="fas fa-lock icon"></i>Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit"><i class="fas fa-sign-in-alt icon"></i>Login</button>
+        </form>
+    </div>
+</body>
+</html>
